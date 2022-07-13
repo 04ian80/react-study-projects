@@ -24,18 +24,17 @@ export const DDayStyle = styled.div`
 export const DDayInfostyle = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 30px;
+  margin-left: 30px;
+  font-weight: 600;
 `;
 
 export const DDayNameStyle = styled.span`
-  padding: 10px;
   margin-bottom: 5px;
-  // background-color: teal;
   border-radius: 10px;
   font-size: 30px;
 `;
 
 export const DateStyle = styled.span`
-  color: white;
+  color: #eee;
   font-size: 12px;
 `;

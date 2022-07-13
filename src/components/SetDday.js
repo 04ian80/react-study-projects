@@ -17,6 +17,7 @@ export default function SetDday() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmit(true);
+    setUserInputs([...userInputs, userInputs]);
   };
 
   return (
@@ -49,7 +50,7 @@ const DDayNameStyle = styled.input`
   padding: 5px 15px;
   border: none;
   border-radius: 10px;
-  transition: border-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 
   &:-internal-autofill-selected {
     background-color: #fff;
@@ -57,7 +58,8 @@ const DDayNameStyle = styled.input`
 
   &:focus {
     outline-style: none;
-    border-bottom: 2px solid rgba(10, 110, 210, 0.6);
+    background-color: rgba(84, 166, 145, 0.4);
+    font-weight: 500;
   }
 `;
 

@@ -14,7 +14,7 @@ export default function Today() {
     <TodayStyle>
       <TodayYear>{todayYear}년 </TodayYear>
       <TodayMonthnDate>
-        {todayMonth}월 {todayDate}일 {DAYS[todayDay]}요일
+        {todayMonth + 1}월 {todayDate}일 {DAYS[todayDay]}요일
       </TodayMonthnDate>
     </TodayStyle>
   );

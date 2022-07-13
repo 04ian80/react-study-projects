@@ -1,0 +1,41 @@
+import styled from 'styled-components';
+
+export const BoxStyle = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: 3px solid rgba(0,0,0,0.1);
+border-radius: 20px;
+padding: 10px;
+margin: 10px;
+background-color: #63C3D2;
+color: white;
+font-family:
+  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+font-weight: 700;
+`;
+
+export const DDayStyle = styled.div`
+  flex-shrink: 0;
+  max-width: 300px;
+  font-size: 50px;
+`;
+
+export const DDayInfostyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+`;
+
+export const DDayNameStyle = styled.span`
+  padding: 10px;
+  margin-bottom: 5px;
+  // background-color: teal;
+  border-radius: 10px;
+  font-size: 30px;
+`;
+
+export const DateStyle = styled.span`
+  color: white;
+  font-size: 12px;
+`;

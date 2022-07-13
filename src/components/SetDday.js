@@ -3,8 +3,6 @@ import Dday from './Dday';
 import styled from 'styled-components';
 
 export default function SetDday() {
-  // const [dDayName, setDDayName] = useState('');
-  // const [date, setDate] = useState('');
   const [userInputs, setUserInputs] = useState({
     dDayName: '',
     date: '',
@@ -18,16 +16,8 @@ export default function SetDday() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setUserInputs(([userInputs]: !userInputs.isSubmit));
-    // setUserInputs(!userInputs.isSubmit);
     setIsSubmit(true);
   };
-
-  // useEffect(() => {
-  //   console.log(userInputs);
-  //   const { dDayName, date, isSubmit } = userInputs;
-  //   console.log(`${dDayName} & ${date} & ${isSubmit}`);
-  // }, []);
 
   return (
     <>

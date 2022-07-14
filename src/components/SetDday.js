@@ -68,10 +68,6 @@ const DDayNameStyle = styled.input`
   transition: background-color 0.3s ease-in-out;
   background-color: rgba(84, 166, 145, 0.1);
 
-  &:-internal-autofill-selected {
-    background-color: #fff;
-  }
-
   &:focus {
     outline-style: none;
     background-color: rgba(84, 166, 145, 0.4);

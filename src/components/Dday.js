@@ -5,11 +5,12 @@ export default function Dday(props) {
   const { dDayName, date } = props.info;
   const { initDay, setInitDay } = useState(date);
 
-  const today = new Date().getTime();
-  const inputDate = new Date(date).getTime();
-  const dday = inputDate - today;
+  const today = new Date();
+  const dday = new Date(date);
+  const gapNum = dday.getTime() - today.getTime();
   const amount = Math.floor(dday / 1000);
-  const realDday = Math.floor(amount / 86400);
+  const realDay = Math.floor(amount / 86400);
+  const a = Math.ceil(gapNum / (1000 * 60 * 60 * 24));
 
   return (
     <div>
@@ -20,8 +21,8 @@ export default function Dday(props) {
         </D.DDayInfostyle>
         <D.DDayStyle>
           <span>
-            D{realDday >= 0 ? '-' : '+'}
-            {realDday === 0 ? 'day' : Math.abs(realDday)}
+            D{a >= 0 ? '-' : '+'}
+            {a === 0 ? 'day' : Math.abs(a)}
           </span>
         </D.DDayStyle>
       </D.BoxStyle>

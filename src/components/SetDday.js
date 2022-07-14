@@ -8,16 +8,21 @@ export default function SetDday() {
     date: '',
   });
   const [isSubmit, setIsSubmit] = useState(false);
+  const [list, setList] = useState([]);
 
   const handleChange = (e) => {
-    setUserInputs(e.target.value);
+    // setUserInputs(e.target.value);
     setUserInputs({ ...userInputs, [e.target.name]: e.target.value });
+    // const { dDayName, date } = userInputs;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmit(true);
-    setUserInputs([...userInputs, userInputs]);
+    setList([...list, userInputs]);
+    // console.log('userInputs');
+    // console.log(userInputs);
+    // console.log(list);
   };
 
   return (
@@ -27,13 +32,12 @@ export default function SetDday() {
           name='dDayName'
           type='text'
           placeholder="What's your D-day?"
-          // maxLength={1}
           onChange={handleChange}
         />
         <DDayNameStyle name='date' type='date' onChange={handleChange} />
         <AddDdayBtn type='submit' value='+' />
       </FormStyle>
-      {isSubmit && <Dday info={userInputs} />}
+      {isSubmit && list.map((d) => <Dday info={d} />)}
     </>
   );
 }

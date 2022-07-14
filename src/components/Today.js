@@ -21,11 +21,14 @@ export default function Today() {
 }
 
 const TodayStyle = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 30px;
   padding: 10px 0;
   background-color: #54a692;
   color: white;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Dday from './Dday';
 import styled from 'styled-components';
 
@@ -9,6 +9,7 @@ export default function SetDday() {
   });
   const [isSubmit, setIsSubmit] = useState(false);
   const [list, setList] = useState([]);
+  const [id, setId] = useState(1);
 
   const handleChange = (e) => {
     // setUserInputs(e.target.value);
@@ -20,10 +21,13 @@ export default function SetDday() {
     e.preventDefault();
     setIsSubmit(true);
     setList([...list, userInputs]);
+    setId(id + 1);
     // console.log('userInputs');
     // console.log(userInputs);
     // console.log(list);
   };
+
+  // console.log(id);
 
   return (
     <>
@@ -37,16 +41,26 @@ export default function SetDday() {
         <DDayNameStyle name='date' type='date' onChange={handleChange} />
         <AddDdayBtn type='submit' value='+' />
       </FormStyle>
-      {isSubmit && list.map((d) => <Dday info={d} />)}
+      <DDayStyle>
+        {isSubmit && list.map((d) => <Dday info={d} key={id} />)}
+      </DDayStyle>
     </>
   );
 }
 
 const FormStyle = styled.form`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 96px;
+  padding: 10px 0;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 const DDayNameStyle = styled.input`
@@ -55,6 +69,7 @@ const DDayNameStyle = styled.input`
   border: none;
   border-radius: 10px;
   transition: background-color 0.3s ease-in-out;
+  background-color: rgba(84, 166, 145, 0.1);
 
   &:-internal-autofill-selected {
     background-color: #fff;
@@ -75,4 +90,10 @@ const AddDdayBtn = styled.input`
   border-radius: 50%;
   color: white;
   background-color: #54a692;
+`;
+
+const DDayStyle = styled.div`
+  // &:first-child {
+  margin-top: 260px;
+  // }
 `;

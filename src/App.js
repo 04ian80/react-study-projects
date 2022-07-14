@@ -5,15 +5,9 @@ import styled from 'styled-components';
 
 export default function App() {
   return (
-    <DDayContainer>
+    <div>
       <Today />
       <SetDday />
-    </DDayContainer>
+    </div>
   );
 }
-
-const DDayContainer = styled.div`
-  background-color: #d7d7d8;
-  // color: white;
-  height: 100vh;
-`;

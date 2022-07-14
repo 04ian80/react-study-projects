@@ -9,25 +9,22 @@ export default function SetDday() {
   });
   const [isSubmit, setIsSubmit] = useState(false);
   const [list, setList] = useState([]);
-  const [id, setId] = useState(1);
+  // const [id, setId] = useState(1);
 
   const handleChange = (e) => {
-    // setUserInputs(e.target.value);
     setUserInputs({ ...userInputs, [e.target.name]: e.target.value });
-    // const { dDayName, date } = userInputs;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmit(true);
-    setList([...list, userInputs]);
-    setId(id + 1);
-    // console.log('userInputs');
-    // console.log(userInputs);
-    // console.log(list);
+    if (userInputs.dDayName === '' || userInputs.date === '') {
+      return;
+    } else {
+      setIsSubmit(true);
+      setList([...list, userInputs]);
+    }
+    // setId(id + 1);
   };
-
-  // console.log(id);
 
   return (
     <>
@@ -42,7 +39,7 @@ export default function SetDday() {
         <AddDdayBtn type='submit' value='+' />
       </FormStyle>
       <DDayStyle>
-        {isSubmit && list.map((d) => <Dday info={d} key={id} />)}
+        {isSubmit && list.map((d, idx) => <Dday info={d} key={idx} />)}
       </DDayStyle>
     </>
   );

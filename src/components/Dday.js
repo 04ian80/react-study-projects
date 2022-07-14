@@ -3,7 +3,6 @@ import * as D from './Dday.style';
 
 export default function Dday(props) {
   const { dDayName, date } = props.info;
-  const { initDay, setInitDay } = useState(date);
 
   const today = new Date();
   const dday = new Date(date);

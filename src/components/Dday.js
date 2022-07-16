@@ -9,10 +9,9 @@ export default function Dday(props) {
 
   useEffect(() => {
     const today = new Date();
-    const dday = new Date(date);
-    const gapNum = dday.getTime() - today.getTime();
+    const dday = new Date(`${date} 00:00:00`);
+    const gapNum = dday - today;
     setDays(Math.floor(gapNum / (1000 * 60 * 60 * 24)));
-    console.log(days);
   }, [date]);
 
   return (

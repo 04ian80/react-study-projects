@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const BoxStyle = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   border: 3px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
-  background-color: #63c3d2;
-  color: white;
+  background-color: rgba(200,240,210);
+  color: rgba(10,10,10,0.6);
   font-family:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
   font-weight: 700;
@@ -19,26 +20,28 @@ export const BoxStyle = styled.div`
 
 export const DDayStyle = styled.div`
   flex-shrink: 0;
-  max-width: 300px;
-  font-size: 50px;
+  font-size: 40px;
 `;
 
 export const DDayInfostyle = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-left: 30px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  // flex-direction: column;
+  // margin-left: 30px;
   font-weight: 600;
 `;
 
-export const DDayNameStyle = styled.span`
+export const DDayNameStyle = styled.div`
   margin-bottom: 5px;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 50px;
 `;
 
 export const DateStyle = styled.span`
-  color: #eee;
-  font-size: 12px;
+  font-size: 20px;
 `;
 
 export const CloseBtn = styled.button`

@@ -4,11 +4,25 @@ import * as D from './Dday.style';
 export default function Dday(props) {
   const { dDayName, date } = props.info;
   const [hover, setHover] = useState(false);
+  const [days, setDays] = useState(0);
 
-  const today = new Date();
-  const dday = new Date(date);
-  const gapNum = dday.getTime() - today.getTime();
-  const a = Math.ceil(gapNum / (1000 * 60 * 60 * 24));
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     // console.log(date);
+  //     setTime(date);
+  //   }, 1000);
+  // }, []);
+
+  useEffect(() => {
+    const today = new Date();
+    const dday = new Date(date);
+    const gapNum = dday.getTime() - today.getTime();
+    setDays(Math.floor(gapNum / (1000 * 60 * 60 * 24)));
+    // setHours(Math.floor((gapNum / (1000 * 60 * 60)) % 24));
+    // setMinutes(Math.floor((gapNum / 1000 / 60) % 60));
+    // setSeconds(Math.floor((gapNum / 1000) % 60));
+    console.log(days);
+  }, [date]);
 
   const handleClick = (e) => {
     console.log(e);
@@ -30,8 +44,9 @@ export default function Dday(props) {
         </D.DDayInfostyle>
         <D.DDayStyle>
           <span>
-            D{a >= 0 ? '-' : '+'}
-            {a === 0 ? 'day' : Math.abs(a)}
+            D{days >= -1 ? '-' : '+'}
+            {days === -1 ? 'day' : Math.abs(days + 1)}
+            <br />
           </span>
         </D.DDayStyle>
         {hover ? <D.CloseBtn onClick={handleClick}>X</D.CloseBtn> : ''}

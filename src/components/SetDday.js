@@ -23,7 +23,10 @@ export default function SetDday() {
       setIsSubmit(true);
       setList([...list, userInputs]);
     }
-    // setId(id + 1);
+    for (let i = 0; i < 2; i++) {
+      e.target[i].value = '';
+    }
+    // if(e.target[i])
   };
 
   return (
@@ -34,6 +37,7 @@ export default function SetDday() {
           type='text'
           placeholder="What's your D-day?"
           onChange={handleChange}
+          maxLength={10}
         />
         <DDayNameStyle name='date' type='date' onChange={handleChange} />
         <AddDdayBtn type='submit' value='+' />

@@ -9,7 +9,6 @@ export default function SetDday() {
   });
   const [isSubmit, setIsSubmit] = useState(false);
   const [list, setList] = useState([]);
-  // const [id, setId] = useState(1);
 
   const handleChange = (e) => {
     setUserInputs({ ...userInputs, [e.target.name]: e.target.value });

@@ -5,11 +5,9 @@ export const BoxStyle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // align-items: center;
   border-radius: 35px;
   padding: 20px;
   margin: 10px;
-  // background-color: rgba(0,0,0,0.1);
   background-color: #FDE6D8;
 
   color: rgba(10,10,10,0.8);
@@ -20,15 +18,10 @@ export const BoxStyle = styled.div`
   cursor: pointer;
 `;
 
-// export const HoverBoxStyle = styled.div`
-//   color: white;
-// `;
-
 export const DDayStyle = styled.div`
   flex-shrink: 0;
   font-size: 40px;
   color: #6b705d;
-  // #54a692
 `;
 
 export const DDayInfostyle = styled.div`
@@ -37,8 +30,6 @@ export const DDayInfostyle = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
-  // flex-direction: column;
-  // margin-left: 30px;
   font-weight: 600;
 `;
 

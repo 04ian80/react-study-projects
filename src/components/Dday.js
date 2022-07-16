@@ -7,21 +7,11 @@ export default function Dday(props) {
   const [hover, setHover] = useState(false);
   const [days, setDays] = useState(0);
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     // console.log(date);
-  //     setTime(date);
-  //   }, 1000);
-  // }, []);
-
   useEffect(() => {
     const today = new Date();
     const dday = new Date(date);
     const gapNum = dday.getTime() - today.getTime();
     setDays(Math.floor(gapNum / (1000 * 60 * 60 * 24)));
-    // setHours(Math.floor((gapNum / (1000 * 60 * 60)) % 24));
-    // setMinutes(Math.floor((gapNum / 1000 / 60) % 60));
-    // setSeconds(Math.floor((gapNum / 1000) % 60));
     console.log(days);
   }, [date]);
 
@@ -30,7 +20,7 @@ export default function Dday(props) {
       onClick={() => {
         setBoxDelete(false);
       }}
-      onMouseEnter={(e) => {
+      onMouseEnter={() => {
         setHover(true);
       }}
       onMouseLeave={() => {

@@ -30,7 +30,7 @@ const TodayStyle = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 10px 0;
-  background-color: #54a692;
+  background-color: #a5a58c;
   color: white;
   font-weight: 600;
 `;

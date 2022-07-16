@@ -3,6 +3,7 @@ import * as D from './Dday.style';
 
 export default function Dday(props) {
   const { dDayName, date } = props.info;
+  const [boxDelete, setBoxDelete] = useState(true);
   const [hover, setHover] = useState(false);
   const [days, setDays] = useState(0);
 
@@ -24,33 +25,33 @@ export default function Dday(props) {
     console.log(days);
   }, [date]);
 
-  const handleClick = (e) => {
-    console.log(e);
-  };
-
   return (
     <div
-      onMouseEnter={() => {
+      onClick={() => {
+        setBoxDelete(false);
+      }}
+      onMouseEnter={(e) => {
         setHover(true);
       }}
       onMouseLeave={() => {
         setHover(false);
       }}
     >
-      <D.BoxStyle>
-        <D.DDayInfostyle>
-          <D.DDayNameStyle>{dDayName}</D.DDayNameStyle>
-          <D.DateStyle>{date}</D.DateStyle>
-        </D.DDayInfostyle>
-        <D.DDayStyle>
-          <span>
-            D{days >= -1 ? '-' : '+'}
-            {days === -1 ? 'day' : Math.abs(days + 1)}
-            <br />
-          </span>
-        </D.DDayStyle>
-        {hover ? <D.CloseBtn onClick={handleClick}>X</D.CloseBtn> : ''}
-      </D.BoxStyle>
+      {boxDelete && (
+        <D.BoxStyle style={{ transform: hover ? 'scale(1.02)' : 'scale(1)' }}>
+          <D.DDayInfostyle>
+            <D.DDayNameStyle>{dDayName}</D.DDayNameStyle>
+            <D.DateStyle>{date}</D.DateStyle>
+          </D.DDayInfostyle>
+          <D.DDayStyle>
+            <span>
+              D{days >= -1 ? '-' : '+'}
+              {days === -1 ? 'day' : Math.abs(days + 1)}
+              <br />
+            </span>
+          </D.DDayStyle>
+        </D.BoxStyle>
+      )}
     </div>
   );
 }

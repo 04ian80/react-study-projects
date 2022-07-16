@@ -37,13 +37,14 @@ export default function SetDday() {
           type='text'
           placeholder="What's your D-day?"
           onChange={handleChange}
-          maxLength={10}
+          maxLength={15}
         />
         <DDayNameStyle name='date' type='date' onChange={handleChange} />
         <AddDdayBtn type='submit' value='+' />
       </FormStyle>
       <DDayStyle>
-        {isSubmit && list.map((d, idx) => <Dday info={d} key={idx} />)}
+        {isSubmit &&
+          list.map((d, idx) => <Dday info={d} key={idx} />).reverse()}
       </DDayStyle>
     </>
   );
@@ -70,11 +71,11 @@ const DDayNameStyle = styled.input`
   border: none;
   border-radius: 10px;
   transition: background-color 0.3s ease-in-out;
-  background-color: rgba(84, 166, 145, 0.1);
+  background-color: #ddbea9;
 
   &:focus {
     outline-style: none;
-    background-color: rgba(84, 166, 145, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
     font-weight: 500;
   }
 `;
@@ -86,7 +87,7 @@ const AddDdayBtn = styled.input`
   border: none;
   border-radius: 50%;
   color: white;
-  background-color: #54a692;
+  background-color: #6b705d;
 `;
 
 const DDayStyle = styled.div`

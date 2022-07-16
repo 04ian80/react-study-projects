@@ -27,7 +27,11 @@ export default function Dday(props) {
       }}
     >
       {boxDelete && (
-        <BoxStyle style={{ transform: hover ? 'scale(1.02)' : 'scale(1)' }}>
+        <BoxStyle
+          style={{
+            transform: hover ? 'scale(1.02)' : 'scale(1)',
+          }}
+        >
           <DDayInfostyle>
             <DDayNameStyle>{dDayName}</DDayNameStyle>
             <DateStyle>{date}</DateStyle>
@@ -39,6 +43,7 @@ export default function Dday(props) {
               <br />
             </span>
           </DDayStyle>
+          {hover && <CloseBtn>지우기</CloseBtn>}
         </BoxStyle>
       )}
     </div>
@@ -53,14 +58,13 @@ const BoxStyle = styled.div`
   border-radius: 35px;
   padding: 20px;
   margin: 10px;
+  overflow: hidden;
   background-color: #FDE6D8;
-
   color: rgba(10,10,10,0.8);
   font-family:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
   font-weight: 700;
   z-index: -1;
-  cursor: pointer;
 `;
 
 const DDayStyle = styled.div`
@@ -99,10 +103,11 @@ const CloseBtn = styled.button`
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   border: none;
-  border-radius: 50%;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 70px;
+  font-weight: 700;
+  background-color: rgba(165, 165, 140, 0.7);
 `;

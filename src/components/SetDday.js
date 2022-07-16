@@ -26,7 +26,7 @@ export default function SetDday() {
     for (let i = 0; i < 2; i++) {
       e.target[i].value = '';
     }
-    // if(e.target[i])
+    setUserInputs({ dDayName: '', date: '' });
   };
 
   return (

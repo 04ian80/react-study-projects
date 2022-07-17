@@ -26,6 +26,7 @@ export default function SetDday() {
       e.target[i].value = '';
     }
     setUserInputs({ dDayName: '', date: '' });
+    console.log(list);
   };
 
   return (
@@ -36,7 +37,6 @@ export default function SetDday() {
           type='text'
           placeholder="What's your D-day?"
           onChange={handleChange}
-          maxLength={15}
         />
         <DDayNameStyle name='date' type='date' onChange={handleChange} />
         <AddDdayBtn type='submit' value='+' />

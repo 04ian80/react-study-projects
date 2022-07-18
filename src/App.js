@@ -4,9 +4,9 @@ import SetDday from './components/SetDday';
 
 export default function App() {
   return (
-    <div>
+    <>
       <Today />
       <SetDday />
-    </div>
+    </>
   );
 }

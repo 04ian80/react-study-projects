@@ -11,7 +11,7 @@ export default function Dday(props) {
     const today = new Date();
     const dday = new Date(`${date} 00:00:00`);
     const gapNum = dday - today;
-    setDays(Math.floor(gapNum / (1000 * 60 * 60 * 24)));
+    setDays(Math.ceil(gapNum / (1000 * 60 * 60 * 24)));
   }, [date]);
 
   return (
@@ -38,8 +38,8 @@ export default function Dday(props) {
           </DDayInfostyle>
           <DDayStyle>
             <span>
-              D{days >= -1 ? '-' : '+'}
-              {days === -1 ? 'day' : Math.abs(days + 1)}
+              D{days >= 0 ? '-' : '+'}
+              {days === 0 ? 'day' : Math.abs(days)}
               <br />
             </span>
           </DDayStyle>

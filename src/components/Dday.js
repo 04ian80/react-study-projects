@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export default function Dday(props) {
   const { dDayName, date } = props.info;
-  const [boxDelete, setBoxDelete] = useState(true);
   const [hover, setHover] = useState(false);
   const [days, setDays] = useState(0);
 
@@ -16,9 +15,8 @@ export default function Dday(props) {
 
   return (
     <div
-      onClick={() => {
-        setBoxDelete(false);
-      }}
+      id={props.id}
+      onClick={props.delete}
       onMouseEnter={() => {
         setHover(true);
       }}
@@ -26,26 +24,24 @@ export default function Dday(props) {
         setHover(false);
       }}
     >
-      {boxDelete && (
-        <BoxStyle
-          style={{
-            transform: hover ? 'scale(1.02)' : 'scale(1)',
-          }}
-        >
-          <DDayInfostyle>
-            <DDayNameStyle>{dDayName}</DDayNameStyle>
-            <DateStyle>{date}</DateStyle>
-          </DDayInfostyle>
-          <DDayStyle>
-            <span>
-              D{days >= 0 ? '-' : '+'}
-              {days === 0 ? 'day' : Math.abs(days)}
-              <br />
-            </span>
-          </DDayStyle>
-          {hover && <CloseBtn>지우기</CloseBtn>}
-        </BoxStyle>
-      )}
+      <BoxStyle
+        style={{
+          transform: hover ? 'scale(1.02)' : 'scale(1)',
+        }}
+      >
+        <DDayInfostyle>
+          <DDayNameStyle>{dDayName}</DDayNameStyle>
+          <DateStyle>{date}</DateStyle>
+        </DDayInfostyle>
+        <DDayStyle>
+          <span>
+            D{days >= 0 ? '-' : '+'}
+            {days === 0 ? 'day' : Math.abs(days)}
+            <br />
+          </span>
+        </DDayStyle>
+        {hover && <CloseBtn>지우기</CloseBtn>}
+      </BoxStyle>
     </div>
   );
 }

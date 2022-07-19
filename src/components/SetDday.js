@@ -28,6 +28,12 @@ export default function SetDday() {
     setUserInputs({ dDayName: '', date: '' });
   };
 
+  const deleteItem = (e) => {
+    const key = e.target.id;
+    list.splice(key, 1);
+    setList([...list]);
+  };
+
   return (
     <>
       <FormStyle name='isSubmit' onSubmit={handleSubmit}>
@@ -42,7 +48,11 @@ export default function SetDday() {
       </FormStyle>
       <DDayStyle>
         {isSubmit &&
-          list.map((d, idx) => <Dday info={d} key={idx} />).reverse()}
+          list
+            .map((d, idx) => (
+              <Dday info={d} key={idx} id={idx} delete={deleteItem} />
+            ))
+            .reverse()}
       </DDayStyle>
     </>
   );

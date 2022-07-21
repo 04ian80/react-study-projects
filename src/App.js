@@ -2,12 +2,10 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Home from './components/Home';
-import Music4u from './components/Music4u';
 import MyMusic from './components/MyMusic';
 import Recommand from './components/Recommand';
 import Search from './components/Search';
-import Lists from './components/Lists';
-import TFS from './components/TFS';
+import SearchLists from './components/SearchLists';
 // import Main from './components/Main';
 
 export default function App() {
@@ -15,9 +13,8 @@ export default function App() {
     <Container>
       <BrowserRouter>
         <Routes>
-          <Route path={'/lists'} element={<Lists />} />
+          <Route path={'/lists'} element={<SearchLists />} />
           <Route path={'/'} element={<Home />} />
-          {/* <Route path={'/'} element={<Main />}> */}
           <Route path={'/mymusic'} element={<MyMusic />} />
           <Route path={'/search'} element={<Search />} />
           <Route path={'/:id'} element={<Recommand />} />

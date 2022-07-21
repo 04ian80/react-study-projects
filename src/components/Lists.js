@@ -1,73 +1,59 @@
-import { React, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 
-function Lists() {
-  // const [input, setInput] = useState('');
-
-  const nav = useNavigate();
-
-  const goBackHome = () => {
-    nav('/');
-  };
-
-  const clickCancel = (e) => {
-    e.target.parentNode[0].value = '';
-  };
+function Lists(props) {
+  const { playlist } = props;
 
   return (
     <>
-      <Header>
-        <span onClick={goBackHome} style={{ cursor: 'pointer' }}>
-          홈
-        </span>
-        <span>재생목록</span>
-        <span onClick={goBackHome} style={{ cursor: 'pointer' }}>
-          ▽
-        </span>
-      </Header>
-      <SearchForm>
-        <Search
-          className='search-input'
-          type='text'
-          placeholder='곡명 또는 아티스트명을 입력하세요.'
-        />
-        <CancelBtn type='button' value='취소' onClick={clickCancel} />
-      </SearchForm>
+      {/* Lists */}
+      {playlist.map((l) => (
+        <EachList key={l.id}>
+          <Img>앨범</Img>
+          <SongInfo>
+            <span>{l.song}</span>
+            <span>{l.artist}</span>
+          </SongInfo>
+          <Play>
+            <PlayItem>▷</PlayItem>
+            <PlayItem>⠇</PlayItem>
+          </Play>
+        </EachList>
+      ))}
     </>
   );
 }
 
 export default Lists;
 
-const Header = styled.div`
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-`;
-
-const SearchForm = styled.form`
-  display: flex;
-  padding: 10px;
-`;
-
-const Search = styled.input`
+const EachList = styled.div`
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 20px;
-  background-color: #eee;
-  font-size: 11px;
-
-  &:focus {
-    outline: none;
-  }
+  margin-bottom: 10px;
+  font-size: 10px;
 `;
 
-const CancelBtn = styled.input`
-  background-color: white;
-  border: none;
-  cursor: pointer;
+const SongInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Img = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #eee;
+  font-size: 10px;
+`;
+
+const Play = styled.div`
+  margin-left: auto;
+  font-size: 16px;
+`;
+
+const PlayItem = styled.span`
+  margin-left: 5px;
 `;

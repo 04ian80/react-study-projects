@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import PopNow from './PopNow';
 
 const data = [
   {
@@ -61,6 +62,8 @@ export default function Home() {
           ))}
         </RecommandContainer>
 
+        <PopNow />
+
         <Playing>
           <PlayingLink to='lists'>
             {data[0].song} | {data[0].artist}
@@ -74,6 +77,9 @@ export default function Home() {
 
           <LinkStyle to='search'>탐색</LinkStyle>
         </NavBar>
+
+        <BottomBox></BottomBox>
+        {/* nav bar때문에 박스 하나 놔줌 */}
         <Outlet />
       </div>
     </>
@@ -81,7 +87,7 @@ export default function Home() {
 }
 
 const NavBar = styled.ul`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -103,6 +109,7 @@ const LinkStyle = styled(Link)`
 
 const RecommandContainer = styled.div`
   display: flex;
+  margin-bottom: 30px;
   overflow: auto;
   white-space: wrap;
 
@@ -129,7 +136,7 @@ const RecommandInfo = styled.div`
 `;
 
 const Playing = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 32px;
   left: 0;
   right: 0;
@@ -137,15 +144,19 @@ const Playing = styled.div`
   justify-content: center;
   padding: 10px 0;
   margin: 0;
-  background-color: rgba(192, 192, 192, 0.1);
+  background-color: rgba(240, 240, 240);
   text-decoration: none;
   border-top: 1px solid black;
   list-style: none;
   font-size: 10px;
-  z-index: -9999;
+  z-index: 9999;
 `;
 
 const PlayingLink = styled(Link)`
   color: black;
   text-decoration: none;
+`;
+
+const BottomBox = styled.div`
+  height: 100px;
 `;

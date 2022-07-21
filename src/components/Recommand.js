@@ -23,7 +23,6 @@ const playlist = [
 export default function Recommand() {
   const params = useParams();
   const nav = useNavigate();
-  // console.log(id);
 
   return (
     <>

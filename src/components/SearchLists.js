@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Lists from './Lists';
+import * as H from './Head.style';
 
 const playlist = [
   {
@@ -46,7 +47,7 @@ export default function SearchLists() {
 
   return (
     <>
-      <Header>
+      <H.Header>
         <span onClick={goBackHome} style={{ cursor: 'pointer' }}>
           홈
         </span>
@@ -54,7 +55,7 @@ export default function SearchLists() {
         <span onClick={goBackHome} style={{ cursor: 'pointer' }}>
           ▽
         </span>
-      </Header>
+      </H.Header>
       <SearchForm>
         <Search
           className='search-input'
@@ -67,12 +68,6 @@ export default function SearchLists() {
     </>
   );
 }
-
-const Header = styled.div`
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-`;
 
 const SearchForm = styled.form`
   display: flex;

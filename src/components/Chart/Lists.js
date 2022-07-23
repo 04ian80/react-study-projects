@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as L from '../style/List.style';
+import { Link } from 'react-router-dom';
 
-function Lists(props) {
+export default function Lists(props) {
+  const [albuminfo, setAlbuminfo] = useState(false);
   const { playlist } = props;
 
+  const popAlbumInfo = () => {
+    setAlbuminfo(true);
+  };
+
   return (
-    <>
+    <div>
       {/* Lists */}
       {playlist.map((l) => (
         <L.EachList key={l.id}>
@@ -18,44 +24,20 @@ function Lists(props) {
           </L.SongInfo>
           <L.Play>
             <L.PlayItem>▷</L.PlayItem>
-            <L.PlayItem>⠇</L.PlayItem>
+            {/* <L.PlayItem onClick={popAlbumInfo}>⠇</L.PlayItem> */}
+            <PlayItem to='albuminfo'>⠇</PlayItem>
+            {/* {albuminfo && <L.AlbumInfo>앨범 정보</L.AlbumInfo>} */}
           </L.Play>
         </L.EachList>
       ))}
-    </>
+    </div>
   );
 }
 
-export default Lists;
-
-const EachList = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 10px;
-`;
-
-const SongInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Img = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  background-color: #eee;
-  font-size: 10px;
-`;
-
-const Play = styled.div`
-  margin-left: auto;
-  font-size: 16px;
-`;
-
-const PlayItem = styled.span`
+export const PlayItem = styled(Link)`
+  position: relative;
+  cursor: pointer;
   margin-left: 5px;
+  color: black;
+  text-decoration: none;
 `;

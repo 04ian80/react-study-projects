@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const EachList = styled.div`
   display: flex;
@@ -30,5 +31,16 @@ export const Play = styled.div`
 `;
 
 export const PlayItem = styled.span`
+  position: relative;
+  cursor: pointer;
   margin-left: 5px;
+`;
+
+export const AlbumInfo = styled.div`
+  position: absolute;
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 10px;
 `;

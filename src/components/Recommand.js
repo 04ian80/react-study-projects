@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Lists from './Chart/Lists';
 
 const playlist = [
   {
@@ -31,19 +32,7 @@ export default function Recommand() {
         <Title>{params.id}</Title>
       </Header>
       <div>
-        {playlist.map((list) => (
-          <EachList key={list.id}>
-            <Img>앨범</Img>
-            <SongInfo>
-              <span>{list.song}</span>
-              <span>{list.artist}</span>
-            </SongInfo>
-            <Play>
-              <PlayItem>▷</PlayItem>
-              <PlayItem>⠇</PlayItem>
-            </Play>
-          </EachList>
-        ))}
+        <Lists playlist={playlist} />
       </div>
     </>
   );
@@ -63,36 +52,6 @@ const Back = styled.span`
 
 const Title = styled.span`
   margin: auto;
-`;
-
-const EachList = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 10px;
-`;
-
-const SongInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Img = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  background-color: #eee;
-  font-size: 10px;
-`;
-
-const Play = styled.div`
-  margin-left: auto;
-  font-size: 16px;
-`;
-
-const PlayItem = styled.span`
-  margin-left: 5px;
+  font-size: 11px;
+  font-weight: 500;
 `;

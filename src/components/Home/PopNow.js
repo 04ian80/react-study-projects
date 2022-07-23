@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import ChartList from './ChartList';
+import ChartList from '../Chart/ChartList';
 
 export default function PopNow() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import * as H from './Head.style';
-import ChartList from './ChartList';
+import * as H from '../style/Head.style';
+import ChartList from '../Chart/ChartList';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 function ChartNow() {

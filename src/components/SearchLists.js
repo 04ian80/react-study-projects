@@ -1,8 +1,8 @@
 import { React, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import Lists from './Lists';
-import * as H from './Head.style';
+import Lists from './Chart/Lists';
+import * as H from './style/Head.style';
 
 const playlist = [
   {

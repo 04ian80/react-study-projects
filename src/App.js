@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import ChartNow from './components/ChartNow';
-import Home from './components/Home';
+import ChartNow from './components/Home/ChartNow';
+import Home from './components/Home/Home';
 import MyMusic from './components/MyMusic';
 import Recommand from './components/Recommand';
 import Search from './components/Search';

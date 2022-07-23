@@ -2,25 +2,27 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import PopNow from './PopNow';
+// import useSWR from 'swr';
+// import axios from 'axios';
 
 const data = [
   {
     id: 1,
-    title: 'Collagen (Feat. Sylo) 느낌의 노래',
-    info: 'LOGI(로기)...',
+    title: 'Citrus 느낌의 노래',
+    info: 'Hadji Gaviota, Good Scott, Chris James...',
     song: 'Good Days',
     artist: 'SZA',
   },
   {
     id: 2,
     title: '나만의 스테이션',
-    info: 'Karina, 방...',
+    info: 'Jeff Bernat, Jack Garret, Shawn Mendes...',
     song: 'Slow Motion',
     artist: 'Karina',
   },
   {
     id: 3,
-    title: '바닷속으로 숨 참고 Love Di...',
+    title: '여름밤, 보코의 테라스를 채우는 트렌디 팝',
     info: '비비의 팬이라면',
     song: 'days like this',
     artist: 'John K',
@@ -28,13 +30,26 @@ const data = [
   {
     id: 4,
     title: '나의 요즘 Pick',
-    info: '2022 상반기 결산...',
+    info: '2022 상반기 결산 : 해외편 100',
     song: 'Off My Face',
     artist: 'Justin Bieber(저스틴 비버)',
   },
 ];
 
 export default function Home() {
+  // async function fetcher() {
+  //   const result = await axios.get(
+  //     'https://jsonplaceholder.typicode.com/posts'
+  //   );
+  //   console.log(result.data);
+  //   return result.data;
+  // }
+
+  // const { data: docs, error } = useSWR('posts', data);
+
+  // if (error) return <div>🙅🏻‍♀️</div>;
+  // if (!docs) return <div>loading...</div>;
+
   return (
     <>
       <div>
@@ -43,21 +58,8 @@ export default function Home() {
         <RecommandContainer>
           {data.map((rec) => (
             <RecommandInfo key={rec.id}>
-              <RecommandLink
-                to={`${rec.title}`}
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  color: 'white',
-                }}
-              >
-                {rec.title}
-              </RecommandLink>
-              <Link
-                to={`${rec.title}`}
-                style={{ color: 'black', textDecoration: 'none' }}
-              >
-                {rec.info}
-              </Link>
+              <RecommandBox to={`${rec.title}`}>{rec.title}</RecommandBox>
+              <RecommanInfo to={`${rec.title}`}>{rec.info}</RecommanInfo>
             </RecommandInfo>
           ))}
         </RecommandContainer>
@@ -118,7 +120,7 @@ const RecommandContainer = styled.div`
   }
 `;
 
-const RecommandLink = styled(Link)`
+const RecommandBox = styled(Link)`
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -127,6 +129,8 @@ const RecommandLink = styled(Link)`
   width: 100px;
   height: 100px;
   text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 `;
 
 const RecommandInfo = styled.div`
@@ -159,4 +163,15 @@ const PlayingLink = styled(Link)`
 
 const BottomBox = styled.div`
   height: 100px;
+`;
+
+const RecommanInfo = styled(Link)`
+  color: black;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import * as L from '../style/List.style';
 
 function Lists(props) {
   const { playlist } = props;
@@ -8,17 +9,18 @@ function Lists(props) {
     <>
       {/* Lists */}
       {playlist.map((l) => (
-        <EachList key={l.id}>
-          <Img>앨범</Img>
-          <SongInfo>
+        <L.EachList key={l.id}>
+          <L.Img>앨범</L.Img>
+          <span>{l.id}</span>
+          <L.SongInfo>
             <span>{l.song}</span>
             <span>{l.artist}</span>
-          </SongInfo>
-          <Play>
-            <PlayItem>▷</PlayItem>
-            <PlayItem>⠇</PlayItem>
-          </Play>
-        </EachList>
+          </L.SongInfo>
+          <L.Play>
+            <L.PlayItem>▷</L.PlayItem>
+            <L.PlayItem>⠇</L.PlayItem>
+          </L.Play>
+        </L.EachList>
       ))}
     </>
   );

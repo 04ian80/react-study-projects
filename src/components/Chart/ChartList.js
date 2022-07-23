@@ -1,8 +1,8 @@
 import React from 'react';
-import * as L from './List.style';
-import styled from 'styled-components';
+import * as L from '../style/List.style';
+import Lists from './Lists';
 
-const chart = [
+const playlist = [
   {
     id: 1,
     song: 'ParadoXXX Invasion',
@@ -33,20 +33,7 @@ const chart = [
 export default function ChartList() {
   return (
     <>
-      {chart.map((l) => (
-        <L.EachList key={l.id}>
-          <L.Img>앨범</L.Img>
-          <span>{l.id}</span>
-          <L.SongInfo>
-            <span>{l.song}</span>
-            <span>{l.artist}</span>
-          </L.SongInfo>
-          <L.Play>
-            <L.PlayItem>▷</L.PlayItem>
-            <L.PlayItem>⠇</L.PlayItem>
-          </L.Play>
-        </L.EachList>
-      ))}
+      <Lists playlist={playlist} />
     </>
   );
 }

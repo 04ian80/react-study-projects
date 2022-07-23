@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as L from '../style/List.style';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export default function Lists(props) {
   const [albuminfo, setAlbuminfo] = useState(false);

@@ -59,7 +59,7 @@ export default function Home() {
           {data.map((rec) => (
             <RecommandInfo key={rec.id}>
               <RecommandBox to={`${rec.title}`}>{rec.title}</RecommandBox>
-              <RecommanInfo to={`${rec.title}`}>{rec.info}</RecommanInfo>
+              <RecommandDesc to={`${rec.title}`}>{rec.info}</RecommandDesc>
             </RecommandInfo>
           ))}
         </RecommandContainer>
@@ -73,10 +73,7 @@ export default function Home() {
         </Playing>
 
         <NavBar>
-          <LinkStyle to='/'>홈</LinkStyle>
-
-          <LinkStyle to='mymusic'>내 음악</LinkStyle>
-
+          <LinkStyle to='/'>홈</LinkStyle>|
           <LinkStyle to='search'>탐색</LinkStyle>
         </NavBar>
 
@@ -165,7 +162,8 @@ const BottomBox = styled.div`
   height: 100px;
 `;
 
-const RecommanInfo = styled(Link)`
+const RecommandDesc = styled(Link)`
+  width: 100px;
   color: black;
   text-decoration: none;
   overflow: hidden;

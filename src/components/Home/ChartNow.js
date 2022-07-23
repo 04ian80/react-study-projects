@@ -1,5 +1,5 @@
 import React from 'react';
-import * as H from '../style/Head.style';
+import * as H from '../style/Header.style';
 import ChartList from '../Chart/ChartList';
 import { Outlet, useNavigate } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ function ChartNow() {
           &lt;
         </span>
         <span>차트</span>
-        <span style={{ cursor: 'pointer', fontSize: '12px' }}>국가/장르</span>
+        <span>국가/장르</span>
       </H.Header>
       <div style={{ marginTop: '30px' }}>
         <ChartList />

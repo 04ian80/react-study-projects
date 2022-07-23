@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Lists from './Chart/Lists';
-import * as H from './style/Head.style';
+import * as H from './style/Header.style';
 
 const playlist = [
   {

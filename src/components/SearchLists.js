@@ -47,12 +47,14 @@ export const reducer = (state, action) => {
   switch (action.type) {
     case 'SEARCH':
       return {
-        render: <Lists playlist={filterdList} />,
+        ...state,
+        render: filterdList,
       };
       break;
     case 'INIT':
       return {
-        render: <Lists playlist={playlist} />,
+        ...state,
+        render: playlist,
       };
     default:
       break;
@@ -60,7 +62,7 @@ export const reducer = (state, action) => {
 };
 
 export const initArg = {
-  render: <Lists playlist={playlist} />,
+  render: playlist,
 };
 
 let songTitle = [];
@@ -115,8 +117,8 @@ export default function SearchLists() {
           }}
         />
       </SearchForm>
-      {/* <Lists playlist={playlist} /> */}
-      {state.render}
+      <Lists playlist={state.render} />
+      {/* {state.render} */}
     </>
   );
 }

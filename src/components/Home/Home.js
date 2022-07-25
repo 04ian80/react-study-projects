@@ -37,19 +37,6 @@ const data = [
 ];
 
 export default function Home() {
-  // async function fetcher() {
-  //   const result = await axios.get(
-  //     'https://jsonplaceholder.typicode.com/posts'
-  //   );
-  //   console.log(result.data);
-  //   return result.data;
-  // }
-
-  // const { data: docs, error } = useSWR('posts', data);
-
-  // if (error) return <div>🙅🏻‍♀️</div>;
-  // if (!docs) return <div>loading...</div>;
-
   return (
     <>
       <div>
@@ -73,8 +60,8 @@ export default function Home() {
         </Playing>
 
         <NavBar>
-          <LinkStyle to='/'>홈</LinkStyle>|
-          <LinkStyle to='search'>탐색</LinkStyle>
+          {/* <LinkStyle to='/'>홈</LinkStyle> */}
+          {/* <LinkStyle to='search'>탐색</LinkStyle> */}
         </NavBar>
 
         <BottomBox></BottomBox>
@@ -138,12 +125,12 @@ const RecommandInfo = styled.div`
 
 const Playing = styled.div`
   position: fixed;
-  bottom: 32px;
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  padding: 15px 0;
   margin: 0;
   background-color: rgba(240, 240, 240);
   text-decoration: none;
@@ -159,7 +146,7 @@ const PlayingLink = styled(Link)`
 `;
 
 const BottomBox = styled.div`
-  height: 100px;
+  height: 50px;
 `;
 
 const RecommandDesc = styled(Link)`

@@ -3,7 +3,7 @@ import * as H from '../style/Header.style';
 import styled from 'styled-components';
 
 import { Outlet, useNavigate } from 'react-router-dom';
-import { toggleChart, chartInit } from '../../reducer/ChartNowReducer';
+import { toggleChart, chartInit } from '../../store/ChartNowReducer';
 
 export default function ChartNow() {
   const nav = useNavigate();

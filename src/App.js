@@ -6,7 +6,7 @@ import axios from 'axios';
 import ChartNow from './components/Home/ChartNow';
 import Home from './components/Home/Home';
 import Recommand from './components/Recommand';
-import Search from './components/Search';
+// import Search from './components/Search';
 import SearchLists from './components/SearchLists';
 import AlbumInfo from './components/AlbumInfo';
 
@@ -28,7 +28,7 @@ export default function App() {
             <Route path={'/'} element={<Home />} />
             <Route path={'chartnow'} element={<ChartNow />} />
             <Route path={'albuminfo'} element={<AlbumInfo />} />
-            <Route path={'search'} element={<Search />} />
+            {/* <Route path={'search'} element={<Search />} /> */}
             <Route path={'/:id'} element={<Recommand />} />
           </Routes>
         </BrowserRouter>

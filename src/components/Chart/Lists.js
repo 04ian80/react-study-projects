@@ -1,15 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import * as L from '../style/List.style';
-import { Link, Outlet } from 'react-router-dom';
+import * as A from '../style/AlbumList.style';
+import { Link } from 'react-router-dom';
 
 export default function Lists(props) {
-  const [albuminfo, setAlbuminfo] = useState(false);
-  const { playlist } = props;
+  const { playlist, albumPlaylist } = props;
 
-  const popAlbumInfo = () => {
-    setAlbuminfo(true);
-  };
+  if (albumPlaylist) {
+    return (
+      <div>
+        {albumPlaylist.map((l) => (
+          <A.EachList key={l.id}>
+            <A.Img>앨범</A.Img>
+            <span>{l.id}</span>
+            <A.SongInfo>
+              <span>{l.song}</span>
+              <span>{l.artist}</span>
+              <span>
+                {l.release}﹒{l.type}
+              </span>
+            </A.SongInfo>
+            <A.Play>
+              <PlayItem to='albuminfo'>⠇</PlayItem>
+            </A.Play>
+          </A.EachList>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -34,7 +53,8 @@ export default function Lists(props) {
   );
 }
 
-export const PlayItem = styled(Link)`
+// Link 스타일은 스타일드 컴포넌트로 안되서 여기서 사용
+const PlayItem = styled(Link)`
   position: relative;
   cursor: pointer;
   margin-left: 5px;

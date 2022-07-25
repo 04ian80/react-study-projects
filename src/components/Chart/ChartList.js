@@ -1,5 +1,4 @@
 import React from 'react';
-import * as L from '../style/List.style';
 import Lists from './Lists';
 
 const playlist = [

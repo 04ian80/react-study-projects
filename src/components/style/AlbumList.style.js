@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const EachList = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 15px;
   font-size: 10px;
 `;
 
@@ -11,14 +11,18 @@ export const SongInfo = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+
+  & > span:not(:first-child) {
+    color: rgba(0, 0, 0, 0.5);
+  }
 `;
 
 export const Img = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   margin-right: 10px;
   background-color: #eee;
   font-size: 10px;

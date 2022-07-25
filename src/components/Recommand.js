@@ -1,6 +1,6 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { useParams, useNavigate } from 'react-router-dom';
 import Lists from './Chart/Lists';
 
 const playlist = [

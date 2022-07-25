@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useReducer } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Lists from './Chart/Lists';
@@ -32,10 +32,47 @@ const playlist = [
   },
 ];
 
-export default function SearchLists() {
-  // const [input, setInput] = useState('');
+let filterdList = [];
+const searchSong = (e) => {
+  songTitle.forEach((keyword) => {
+    if (keyword.includes(e.target.value)) {
+      let idx = songTitle.indexOf(keyword);
+      filterdList.push(playlist[idx]);
+    }
+  });
+};
 
+console.log(playlist);
+export const reducer = (state, action) => {
+  switch (action.type) {
+    case 'SEARCH':
+      return {
+        render: <Lists playlist={filterdList} />,
+      };
+      break;
+    case 'INIT':
+      return {
+        render: <Lists playlist={playlist} />,
+      };
+    default:
+      break;
+  }
+};
+
+export const initArg = {
+  render: <Lists playlist={playlist} />,
+};
+
+let songTitle = [];
+for (let i = 0; i < playlist.length; i++) {
+  songTitle.push(playlist[i].song);
+}
+// console.log(songTitle);
+// ['indica', 'Take Me (with 11키티즈)', 'Insecure (feat. Pink Sweat$)', 'Good Days', 'Millions']
+
+export default function SearchLists() {
   const nav = useNavigate();
+  const [state, dispatch] = useReducer(reducer, initArg);
 
   const goBackHome = () => {
     nav('/');
@@ -61,10 +98,25 @@ export default function SearchLists() {
           className='search-input'
           type='text'
           placeholder='곡명 또는 아티스트명을 입력하세요.'
+          onChange={(e) => {
+            searchSong(e);
+            dispatch({ type: 'SEARCH' });
+          }}
+          // onChange={() => {
+          //   dispatch({ type: 'SEARCH' });
+          // }}
         />
-        <CancelBtn type='button' value='취소' onClick={clickCancel} />
+        <CancelBtn
+          type='button'
+          value='취소'
+          onClick={(e) => {
+            clickCancel(e);
+            dispatch({ type: 'INIT' });
+          }}
+        />
       </SearchForm>
-      <Lists playlist={playlist} />
+      {/* <Lists playlist={playlist} /> */}
+      {state.render}
     </>
   );
 }

@@ -21,17 +21,16 @@ const playlist = [
   },
 ];
 
-export default function Recommand(props) {
+export default function Recommand() {
   const params = useParams();
   const nav = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   return (
     <>
       <Header>
         <Back onClick={() => nav('/')}> &lt; </Back>
-        <Title>{params.id}</Title>
+        <Title>{location.state.data[params.id].title}</Title>
       </Header>
       <div>
         <Lists playlist={playlist} />

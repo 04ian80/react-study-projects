@@ -1,11 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import * as L from '../style/List.style';
 import * as A from '../style/AlbumList.style';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Lists(props) {
   const { playlist, albumPlaylist } = props;
+  const nav = useNavigate();
 
   if (albumPlaylist) {
     return (
@@ -22,7 +23,7 @@ export default function Lists(props) {
               </span>
             </A.SongInfo>
             <A.Play>
-              <PlayItem to='albuminfo'>⠇</PlayItem>
+              <A.PlayItem onClick={() => nav('/albuminfo')}>⠇</A.PlayItem>
             </A.Play>
           </A.EachList>
         ))}
@@ -44,7 +45,7 @@ export default function Lists(props) {
           <L.Play>
             <L.PlayItem>▷</L.PlayItem>
             {/* <L.PlayItem onClick={popAlbumInfo}>⠇</L.PlayItem> */}
-            <PlayItem to='albuminfo'>⠇</PlayItem>
+            <L.PlayItem onClick={() => nav('/albuminfo')}>⠇</L.PlayItem>
             {/* {albuminfo && <L.AlbumInfo>앨범 정보</L.AlbumInfo>} */}
           </L.Play>
         </L.EachList>
@@ -54,10 +55,3 @@ export default function Lists(props) {
 }
 
 // Link 스타일은 스타일드 컴포넌트로 안되서 여기서 사용
-const PlayItem = styled(Link)`
-  position: relative;
-  cursor: pointer;
-  margin-left: 5px;
-  color: black;
-  text-decoration: none;
-`;

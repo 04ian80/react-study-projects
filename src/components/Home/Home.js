@@ -7,28 +7,28 @@ import PopNow from './PopNow';
 
 const data = [
   {
-    id: 1,
+    id: 0,
     title: 'Citrus 느낌의 노래',
     info: 'Hadji Gaviota, Good Scott, Chris James...',
     song: 'Good Days',
     artist: 'SZA',
   },
   {
-    id: 2,
+    id: 1,
     title: '나만의 스테이션',
     info: 'Jeff Bernat, Jack Garret, Shawn Mendes...',
     song: 'Slow Motion',
     artist: 'Karina',
   },
   {
-    id: 3,
+    id: 2,
     title: '여름밤, 보코의 테라스를 채우는 트렌디 팝',
     info: '비비의 팬이라면',
     song: 'days like this',
     artist: 'John K',
   },
   {
-    id: 4,
+    id: 3,
     title: '나의 요즘 Pick',
     info: '2022 상반기 결산 : 해외편 100',
     song: 'Off My Face',
@@ -45,8 +45,10 @@ export default function Home() {
         <RecommandContainer>
           {data.map((rec) => (
             <RecommandInfo key={rec.id}>
-              <RecommandBox to={`${rec.title}`}>{rec.title}</RecommandBox>
-              <RecommandDesc to={`${rec.title}`}>{rec.info}</RecommandDesc>
+              <RecommandBox to={`${rec.id}`} state={{ data }}>
+                {rec.title}
+              </RecommandBox>
+              <RecommandDesc to={`${rec.id}`}>{rec.info}</RecommandDesc>
             </RecommandInfo>
           ))}
         </RecommandContainer>

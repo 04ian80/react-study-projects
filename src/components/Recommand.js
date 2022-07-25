@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Lists from './Chart/Lists';
 
 const playlist = [
@@ -21,9 +21,11 @@ const playlist = [
   },
 ];
 
-export default function Recommand() {
+export default function Recommand(props) {
   const params = useParams();
   const nav = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   return (
     <>

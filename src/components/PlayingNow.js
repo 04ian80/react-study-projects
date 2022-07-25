@@ -3,46 +3,19 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Lists from './Chart/Lists';
 import * as H from './style/Header.style';
-
-const playlist = [
-  {
-    id: 1,
-    song: 'indica',
-    artist: 'Alaina Castillo',
-  },
-  {
-    id: 2,
-    song: 'Take Me (with 11키티즈)',
-    artist: '코드 쿤스트, 미노이(meenoi)',
-  },
-  {
-    id: 3,
-    song: 'Insecure (feat. Pink Sweat$)',
-    artist: 'Bren Joy',
-  },
-  {
-    id: 4,
-    song: 'Good Days',
-    artist: 'SZA',
-  },
-  {
-    id: 5,
-    song: 'Millions',
-    artist: 'Sylo Nozra',
-  },
-];
+import { playingNowData } from '../data/data';
 
 let filterdList = [];
 const searchSong = (e) => {
   songTitle.forEach((keyword) => {
     if (keyword.includes(e.target.value)) {
       let idx = songTitle.indexOf(keyword);
-      filterdList.push(playlist[idx]);
+      filterdList.push(playingNowData[idx]);
     }
   });
 };
 
-console.log(playlist);
+console.log(playingNowData);
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'SEARCH':
@@ -54,7 +27,7 @@ export const reducer = (state, action) => {
     case 'INIT':
       return {
         ...state,
-        render: playlist,
+        render: playingNowData,
       };
     default:
       break;
@@ -62,12 +35,12 @@ export const reducer = (state, action) => {
 };
 
 export const initArg = {
-  render: playlist,
+  render: playingNowData,
 };
 
 let songTitle = [];
-for (let i = 0; i < playlist.length; i++) {
-  songTitle.push(playlist[i].song);
+for (let i = 0; i < playingNowData.length; i++) {
+  songTitle.push(playingNowData[i].song);
 }
 // console.log(songTitle);
 // ['indica', 'Take Me (with 11키티즈)', 'Insecure (feat. Pink Sweat$)', 'Good Days', 'Millions']

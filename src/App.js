@@ -24,7 +24,7 @@ export default function App() {
       <Container>
         <BrowserRouter>
           <Routes>
-            <Route path={'lists'} element={<PlayingNow />} />
+            <Route path={'playingnow'} element={<PlayingNow />} />
             <Route path={'/'} element={<Home />} />
             <Route path={'chartnow'} element={<ChartNow />} />
             <Route path={'albuminfo'} element={<AlbumInfo />} />

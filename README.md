@@ -6,11 +6,20 @@
 
 ## 2. [음악 앱]
 
-- react-router를 활용한 SPA 구현
-  - BrowswerRouter, Routes, Route
-  - useNavigate
-  - Link
-  - Outlet
-- axios 라이브러리로 api 받아오기
-- SWRConfig, useSWR로 받아온 api 전역에 전달
-- useReducer로 카테고리에 따라 다른 UI 구현
+<details>
+<summary>
+react-router를 활용한 Single Page Application 구현
+</summary>
+
+- BrowswerRouter, Routes, Route
+- Link
+- Outlet
+- useReducer
+- useParams
+- useNavigate
+- useLocation
+  </details>
+- **axios** 라이브러리로 api 받아오기
+- **SWRConfig, useSWR**로 받아온 api 전역에 전달
+- **useReducer**로 카테고리에 따라 다른 UI 구현
+- Route에 state를 추가하여 **useParam**과 **useLocation**으로 상세페이지 구현

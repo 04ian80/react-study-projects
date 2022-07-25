@@ -25,6 +25,7 @@ export default function Recommand() {
   const params = useParams();
   const nav = useNavigate();
   const location = useLocation();
+  console.log(location.state.data[params.id].lists);
 
   return (
     <>
@@ -33,7 +34,7 @@ export default function Recommand() {
         <Title>{location.state.data[params.id].title}</Title>
       </Header>
       <div>
-        <Lists playlist={playlist} />
+        <Lists playlist={location.state.data[params.id].lists} />
       </div>
     </>
   );

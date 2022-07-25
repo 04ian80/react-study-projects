@@ -11,6 +11,7 @@ export const SongInfo = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  min-width: 150px;
 
   & > span:not(:first-child) {
     color: rgba(0, 0, 0, 0.5);
@@ -26,6 +27,7 @@ export const Img = styled.span`
   margin-right: 10px;
   background-color: #eee;
   font-size: 10px;
+  flex-shrink: 0;
 `;
 
 export const Play = styled.div`

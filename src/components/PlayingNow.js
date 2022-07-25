@@ -72,7 +72,7 @@ for (let i = 0; i < playlist.length; i++) {
 // console.log(songTitle);
 // ['indica', 'Take Me (with 11키티즈)', 'Insecure (feat. Pink Sweat$)', 'Good Days', 'Millions']
 
-export default function SearchLists() {
+export default function PlayingNow() {
   const nav = useNavigate();
   const [state, dispatch] = useReducer(reducer, initArg);
 

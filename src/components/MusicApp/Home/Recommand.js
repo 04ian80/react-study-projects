@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import Lists from './Chart/Lists';
+import Lists from '../Chart/Lists';
 
 export default function Recommand() {
   const params = useParams();

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import PopNow from './PopNow';
-import { recommandData } from '../../data/data';
+import { recommandData } from '../data/data';
 // import useSWR from 'swr';
 // import axios from 'axios';
 

@@ -1,8 +1,8 @@
 import { React, useReducer } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import Lists from './Chart/Lists';
-import * as H from './style/Header.style';
+import Lists from '../Chart/ChartList';
+import * as H from '../style/Header.style';
 import { playingNowData } from '../data/data';
 
 let filterdList = [];

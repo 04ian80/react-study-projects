@@ -3,19 +3,18 @@ import styled from 'styled-components';
 import { SWRConfig } from 'swr';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import ChartNow from './components/Home/ChartNow';
-import Home from './components/Home/Home';
-import Recommand from './components/Recommand';
+import ChartNow from './components/MusicApp/Home/ChartNow';
+import Home from './components/MusicApp/Home/Home';
+import Recommand from './components/MusicApp/Home/Recommand';
 // import Search from './components/Search';
-import PlayingNow from './components/PlayingNow';
-import AlbumInfo from './components/AlbumInfo';
+import PlayingNow from './components/MusicApp/Home/PlayingNow';
+import AlbumInfo from './components/MusicApp/AlbumInfo';
 
 export default function App() {
   async function fetcher() {
     const result = await axios.get(
       'https://jsonplaceholder.typicode.com/posts'
     );
-    console.log(result.data);
     return result.data;
   }
 

@@ -1,5 +1,5 @@
-import ChartList from '../components/Chart/ChartList';
-import AlbumChartList from '../components/Chart/AlbumChartList';
+import ChartList from '../components/MusicApp/Chart/ChartList';
+import AlbumChartList from '../components/MusicApp/Chart/AlbumChartList';
 
 export const toggleChart = (state, action) => {
   switch (action.type) {

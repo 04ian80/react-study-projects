@@ -7,7 +7,8 @@ export default function Recommand() {
   const params = useParams();
   const nav = useNavigate();
   const location = useLocation();
-  console.log(location.state.recommandData[params.id].lists);
+  console.log(params);
+  console.log(location);
 
   return (
     <>

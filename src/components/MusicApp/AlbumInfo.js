@@ -4,19 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function AlbumInfo() {
-  const { data: docs, error } = useSWR('posts');
+  const { data, error } = useSWR('posts');
   const nav = useNavigate();
 
   if (error) return <div>🙅🏻‍♀️</div>;
-  if (!docs) return <div>loading...</div>;
+  if (!data) return <div>loading...</div>;
   return (
     <div>
       <AlbumInfoHeader>
         <span onClick={() => nav('/')} className='back-btn'>
           &lt;
         </span>
-        <h2 className='album-title'>{docs[0].title}</h2>
-        {/* <br /> */}
+        <h2 className='album-title'>{data[0].title}</h2>
         <span className='album-artist'>artist&#40;아티스트&#41; &gt;</span>
         <span className='album-info'>
           2019.10.07﹒인디, 알앤비/소울﹒싱글﹒FLAC
@@ -36,9 +35,13 @@ export default function AlbumInfo() {
       </AlbumInfoHeader>
       <h3>앨범 소개</h3>
       <AlbumIntroduce>
-        <span>{docs[0].body}</span>
+        <span>
+          {data[0].body}
+          {data[1].body}
+          {data[2].body}
+          {data[3].body}
+        </span>
       </AlbumIntroduce>
-      {/* <Outlet /> */}
     </div>
   );
 }

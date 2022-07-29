@@ -6,7 +6,6 @@ import axios from 'axios';
 import ChartNow from './components/MusicApp/Home/ChartNow';
 import Home from './components/MusicApp/Home/Home';
 import Recommand from './components/MusicApp/Home/Recommand';
-// import Search from './components/Search';
 import PlayingNow from './components/MusicApp/Home/PlayingNow';
 import AlbumInfo from './components/MusicApp/AlbumInfo';
 
@@ -23,12 +22,11 @@ export default function App() {
       <Container>
         <BrowserRouter>
           <Routes>
-            <Route path={'playingnow'} element={<PlayingNow />} />
             <Route path={'/'} element={<Home />} />
             <Route path={'chartnow'} element={<ChartNow />} />
             <Route path={'albuminfo'} element={<AlbumInfo />} />
-            {/* <Route path={'search'} element={<Search />} /> */}
             <Route path={'/:id'} element={<Recommand />} />
+            <Route path={'playingnow'} element={<PlayingNow />} />
           </Routes>
         </BrowserRouter>
       </Container>

@@ -3,8 +3,6 @@ import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import PopNow from './PopNow';
 import { recommandData } from '../data/data';
-// import useSWR from 'swr';
-// import axios from 'axios';
 
 export default function Home() {
   return (
@@ -31,39 +29,12 @@ export default function Home() {
           </PlayingLink>
         </Playing>
 
-        <NavBar>
-          {/* <LinkStyle to='/'>홈</LinkStyle> */}
-          {/* <LinkStyle to='search'>탐색</LinkStyle> */}
-        </NavBar>
-
         <BottomBox></BottomBox>
-        {/* nav bar때문에 박스 하나 놔줌 */}
         <Outlet />
       </div>
     </>
   );
 }
-
-const NavBar = styled.ul`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  margin: 0;
-  border-top: 1px solid #eee;
-  background-color: #fff;
-  text-decoration: none;
-  list-style: none;
-  font-size: 10px;
-`;
-
-const LinkStyle = styled(Link)`
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.7);
-`;
 
 const RecommandContainer = styled.div`
   display: flex;

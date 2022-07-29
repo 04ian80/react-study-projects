@@ -1,4 +1,4 @@
-import { React, useEffect, useReducer } from 'react';
+import { React, useReducer } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Lists from '../Chart/Lists';
@@ -9,21 +9,18 @@ let songTitle = [];
 for (let i = 0; i < playingNowData.length; i++) {
   songTitle.push(playingNowData[i].song);
 }
-// console.log(songTitle);
-// ['indica', 'Take Me (with 11키티즈)', 'Insecure (feat. Pink Sweat$)', 'Good Days', 'Millions']
 
-let filterdList = [];
+let filteredList = [];
 const searchSong = (e) => {
   songTitle.forEach((keyword) => {
     if (keyword.includes(e.target.value)) {
       let idx = songTitle.indexOf(keyword);
-      filterdList.push(playingNowData[idx]);
+      filteredList.push(playingNowData[idx]);
     }
   });
 };
 
-console.log(playingNowData);
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'SEARCH':
       return {
@@ -39,7 +36,7 @@ export const reducer = (state, action) => {
   }
 };
 
-export const initArg = {
+const initArg = {
   render: playingNowData,
 };
 
@@ -72,13 +69,10 @@ export default function PlayingNow() {
           type='text'
           placeholder='곡명 또는 아티스트명을 입력하세요.'
           onChange={(e) => {
-            filterdList = [];
+            filteredList = [];
             searchSong(e);
-            dispatch({ type: 'SEARCH', payload: filterdList });
+            dispatch({ type: 'SEARCH', payload: filteredList });
           }}
-          // onChange={() => {
-          //   dispatch({ type: 'SEARCH' });
-          // }}
         />
         <CancelBtn
           type='button'
@@ -90,7 +84,6 @@ export default function PlayingNow() {
         />
       </SearchForm>
       <Lists playlist={state.render} />
-      {/* {state.render} */}
     </>
   );
 }

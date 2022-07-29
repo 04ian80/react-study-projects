@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react';
-import * as H from '../style/Header.style';
 import styled from 'styled-components';
 
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -11,13 +10,13 @@ export default function ChartNow() {
 
   return (
     <>
-      <H.Header>
+      <Header>
         <span onClick={() => nav('/')} style={{ cursor: 'pointer' }}>
           &lt;
         </span>
         <span>차트</span>
-        <span>국가/장르</span>
-      </H.Header>
+      </Header>
+
       <ChartCategoty>
         <CategoryBtn
           onClick={() => {
@@ -27,6 +26,7 @@ export default function ChartNow() {
         >
           곡
         </CategoryBtn>
+
         <CategoryBtn
           onClick={() => {
             dispatch({ type: 'ALBUM' });
@@ -36,6 +36,7 @@ export default function ChartNow() {
           앨범
         </CategoryBtn>
       </ChartCategoty>
+
       <div style={{ marginTop: '30px' }}>{state.render}</div>
       <Outlet />
     </>
@@ -53,4 +54,15 @@ const CategoryBtn = styled.button`
   background-color: white;
   border: none;
   padding: 15px;
+`;
+
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+
+  & > span:last-child {
+    margin: auto;
+  }
 `;

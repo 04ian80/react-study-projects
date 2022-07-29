@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 import * as L from '../style/List.style';
 import * as A from '../style/AlbumList.style';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +32,6 @@ export default function Lists(props) {
 
   return (
     <div>
-      {/* Lists */}
       {playlist.map((l) => (
         <L.EachList key={l.id}>
           <L.Img>앨범</L.Img>
@@ -53,5 +51,3 @@ export default function Lists(props) {
     </div>
   );
 }
-
-// Link 스타일은 스타일드 컴포넌트로 안되서 여기서 사용

@@ -5,16 +5,15 @@ import Lists from '../Chart/Lists';
 import * as H from '../style/Header.style';
 import { playingNowData } from '../data/data';
 
-let songTitle = [];
-for (let i = 0; i < playingNowData.length; i++) {
-  songTitle.push(playingNowData[i].song);
-}
-
 let filteredList = [];
 const searchSong = (e) => {
-  songTitle.forEach((keyword) => {
-    if (keyword.toLowerCase().includes(e.target.value.toLowerCase())) {
-      let idx = songTitle.indexOf(keyword);
+  let input = e.target.value.toLowerCase();
+  playingNowData.forEach((data) => {
+    if (
+      data.song.toLowerCase().includes(input) ||
+      data.artist.toLowerCase().includes(input)
+    ) {
+      let idx = playingNowData.indexOf(data);
       filteredList.push(playingNowData[idx]);
     }
   });

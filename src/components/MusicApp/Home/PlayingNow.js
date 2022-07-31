@@ -13,7 +13,7 @@ for (let i = 0; i < playingNowData.length; i++) {
 let filteredList = [];
 const searchSong = (e) => {
   songTitle.forEach((keyword) => {
-    if (keyword.includes(e.target.value)) {
+    if (keyword.toLowerCase().includes(e.target.value.toLowerCase())) {
       let idx = songTitle.indexOf(keyword);
       filteredList.push(playingNowData[idx]);
     }

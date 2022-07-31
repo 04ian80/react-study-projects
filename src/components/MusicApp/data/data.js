@@ -199,4 +199,9 @@ export const playingNowData = [
     song: 'Millions',
     artist: 'Sylo Nozra',
   },
+  {
+    id: 6,
+    song: 'Citrus',
+    artist: 'Sylo Nozra',
+  },
 ];

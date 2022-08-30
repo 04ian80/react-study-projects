@@ -4,7 +4,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 1.1rem;
 
   & > span {
     width: 33%;

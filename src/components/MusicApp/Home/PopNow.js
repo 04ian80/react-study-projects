@@ -6,7 +6,7 @@ import ChartList from '../Chart/ChartList';
 export default function PopNow() {
   return (
     <>
-      <h3>지금 인기</h3>
+      <h2>지금 인기</h2>
       <ChartBox>
         <ChartHead>
           <ChartTitle to='chartnow'>차트 &gt;</ChartTitle>
@@ -34,15 +34,17 @@ const ChartHead = styled.div`
 `;
 
 const ChartTitle = styled(Link)`
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 1rem;
   color: black;
 `;
 
 const TopHund = styled.span`
-  font-size: 10px;
+  font-size: 0.8rem;
 `;
 
 const ChartBody = styled.div`
-  padding: 10px;
+  padding: 15px;
 `;

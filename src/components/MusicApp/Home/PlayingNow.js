@@ -96,11 +96,11 @@ const Search = styled.input`
   display: flex;
   align-items: center;
   flex-grow: 1;
-  padding: 8px 15px;
+  padding: 10px 15px;
   border: none;
   border-radius: 20px;
   background-color: #eee;
-  font-size: 11px;
+  font-size: 0.8rem;
 
   &:focus {
     outline: none;
@@ -110,5 +110,6 @@ const Search = styled.input`
 const CancelBtn = styled.input`
   background-color: white;
   border: none;
+  font-size: 1rem;
   cursor: pointer;
 `;

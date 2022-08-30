@@ -46,7 +46,6 @@ export default function ChartNow() {
 const ChartCategoty = styled.div`
   display: flex;
   justify-content: space-around;
-  // padding: 15px 0;
   border-bottom: 1px solid #eee;
 `;
 
@@ -54,13 +53,14 @@ const CategoryBtn = styled.button`
   background-color: white;
   border: none;
   padding: 15px;
+  font-size: 1rem;
 `;
 
 const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 1.2rem;
 
   & > span:last-child {
     margin: auto;

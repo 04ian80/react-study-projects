@@ -48,7 +48,6 @@ export default function AlbumInfo() {
 
 const AlbumInfoHeader = styled.div`
   display: flex;
-  // align-items: center;
   flex-direction: column;
 
   & > span {
@@ -68,23 +67,23 @@ const AlbumInfoHeader = styled.div`
   }
 
   & > .album-artist {
-    font-size: 10px;
+    font-size: 0.9rem;
   }
 
   & > .album-info {
     color: rgba(0, 0, 0, 0.4);
-    font-size: 8px;
+    font-size: 0.8rem;
     font-weight: 400;
-
+  }
 `;
 
 const AlbumIntroduce = styled.div`
-  font-size: 12px;
+  font-size: 1rem;
 `;
 
 const ReactionToAlbum = styled.div`
   display: flex;
-  // flex-direction: column;
+  align-items: center;
   padding: 0 10px;
   width: 280px;
   justify-content: space-between;

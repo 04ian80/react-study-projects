@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <div>
-        <h3>홈</h3>
-        <h5>ㅇㅇ님을 위한 추천</h5>
+        <h2>홈</h2>
+        <h3>ㅇㅇ님을 위한 추천</h3>
         <RecommandContainer>
           {recommandData.map((rec) => (
             <RecommandInfo key={rec.id}>
@@ -53,8 +53,8 @@ const RecommandBox = styled(Link)`
   flex-shrink: 0;
   margin-bottom: 5px;
   padding: 5px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -62,7 +62,7 @@ const RecommandBox = styled(Link)`
 
 const RecommandInfo = styled.div`
   margin: 5px;
-  font-size: 1px;
+  font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.4);
 `;
 
@@ -79,7 +79,7 @@ const Playing = styled.div`
   text-decoration: none;
   border-top: 1px solid black;
   list-style: none;
-  font-size: 10px;
+  font-size: 0.8rem;
   z-index: 9999;
 `;
 
@@ -93,8 +93,8 @@ const BottomBox = styled.div`
 `;
 
 const RecommandDesc = styled(Link)`
-  width: 100px;
-  color: black;
+  width: 150px;
+  color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;

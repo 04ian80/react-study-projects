@@ -4,7 +4,7 @@ export const EachList = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  font-size: 10px;
+  font-size: 0.8rem;
 `;
 
 export const SongInfo = styled.div`
@@ -22,30 +22,21 @@ export const Img = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
   background-color: #eee;
-  font-size: 10px;
+  font-size: 0.8rem;
   flex-shrink: 0;
 `;
 
 export const Play = styled.div`
   margin-left: auto;
-  font-size: 16px;
+  font-size: 1.2rem;
 `;
 
 export const PlayItem = styled.span`
   position: relative;
   cursor: pointer;
   margin-left: 5px;
-`;
-
-export const AlbumInfo = styled.div`
-  position: absolute;
-  padding: 5px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  background-color: #fff;
-  font-size: 10px;
 `;

@@ -26,7 +26,6 @@ export default function Recommand() {
 const Header = styled.div`
   display: flex;
   align-items: center;
-  font-size: 13px;
   font-weight: 400;
   margin-bottom: 30px;
 `;
@@ -37,6 +36,6 @@ const Back = styled.span`
 
 const Title = styled.span`
   margin: auto;
-  font-size: 11px;
+  font-size: 1rem;
   font-weight: 500;
 `;

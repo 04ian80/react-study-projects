@@ -4,7 +4,7 @@ export const EachList = styled.div`
   display: flex;
   align-items: center;
   margin: 15px;
-  font-size: 10px;
+  font-size: 0.8rem;
 `;
 
 export const SongInfo = styled.div`
@@ -26,7 +26,7 @@ export const Img = styled.span`
   height: 80px;
   margin-right: 10px;
   background-color: #eee;
-  font-size: 10px;
+  font-size: 0.8rem;
   flex-shrink: 0;
 `;
 
@@ -47,5 +47,5 @@ export const AlbumInfo = styled.div`
   border: 1px solid #eee;
   border-radius: 10px;
   background-color: #fff;
-  font-size: 10px;
+  font-size: 0.8rem;
 `;

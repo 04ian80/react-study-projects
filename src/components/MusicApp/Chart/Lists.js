@@ -42,9 +42,7 @@ export default function Lists(props) {
           </L.SongInfo>
           <L.Play>
             <L.PlayItem>▷</L.PlayItem>
-            {/* <L.PlayItem onClick={popAlbumInfo}>⠇</L.PlayItem> */}
             <L.PlayItem onClick={() => nav('/albuminfo')}>⠇</L.PlayItem>
-            {/* {albuminfo && <L.AlbumInfo>앨범 정보</L.AlbumInfo>} */}
           </L.Play>
         </L.EachList>
       ))}

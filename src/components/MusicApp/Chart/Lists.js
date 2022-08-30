@@ -4,8 +4,32 @@ import * as A from '../style/AlbumList.style';
 import { useNavigate } from 'react-router-dom';
 
 export default function Lists(props) {
-  const { playlist, albumPlaylist } = props;
+  const { playlist, albumPlaylist, popnow } = props;
   const nav = useNavigate();
+
+  if (popnow) {
+    return (
+      <div>
+        {popnow.map(
+          (l) =>
+            l.id <= 5 && (
+              <L.EachList key={l.id}>
+                <L.Img>앨범</L.Img>
+                <span>{l.id}</span>
+                <L.SongInfo>
+                  <span>{l.song}</span>
+                  <span>{l.artist}</span>
+                </L.SongInfo>
+                <L.Play>
+                  <L.PlayItem>▷</L.PlayItem>
+                  <L.PlayItem onClick={() => nav('/albuminfo')}>⠇</L.PlayItem>
+                </L.Play>
+              </L.EachList>
+            )
+        )}
+      </div>
+    );
+  }
 
   if (albumPlaylist) {
     return (

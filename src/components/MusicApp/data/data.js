@@ -171,6 +171,11 @@ export const songChartData = [
     song: 'Sparkling',
     artist: '청하',
   },
+  {
+    id: 6,
+    song: 'Attention',
+    artist: 'NewJeans',
+  },
 ];
 
 export const playingNowData = [

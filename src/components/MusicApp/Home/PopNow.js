@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ChartList from '../Chart/ChartList';
+import Lists from '../Chart/Lists';
+import { songChartData } from '../data/data';
 
 export default function PopNow() {
   return (
@@ -13,7 +15,7 @@ export default function PopNow() {
           <TopHund>TOP 100 듣기</TopHund>
         </ChartHead>
         <ChartBody>
-          <ChartList />
+          <Lists popnow={songChartData} />
         </ChartBody>
       </ChartBox>
     </>

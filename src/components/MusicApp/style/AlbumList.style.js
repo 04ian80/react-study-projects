@@ -40,12 +40,3 @@ export const PlayItem = styled.span`
   cursor: pointer;
   margin-left: 5px;
 `;
-
-export const AlbumInfo = styled.div`
-  position: absolute;
-  padding: 5px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  background-color: #fff;
-  font-size: 0.8rem;
-`;

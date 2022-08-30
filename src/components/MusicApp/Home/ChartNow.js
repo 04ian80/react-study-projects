@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import styled from 'styled-components';
-
 import { Outlet, useNavigate } from 'react-router-dom';
 import { toggleChart, chartInit } from '../../../store/ChartNowReducer';
 

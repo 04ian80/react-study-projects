@@ -20,7 +20,7 @@ export default function App() {
   return (
     <SWRConfig value={{ fetcher }}>
       <Container>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path={'/'} element={<Home />} />
             <Route path={'chartnow'} element={<ChartNow />} />

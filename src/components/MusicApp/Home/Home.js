@@ -5,6 +5,7 @@ import PopNow from './PopNow';
 import { recommandData } from '../data/data';
 
 export default function Home() {
+  document.title = 'Home | Music App';
   return (
     <>
       <div>

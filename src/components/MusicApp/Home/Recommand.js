@@ -4,6 +4,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Lists from '../Chart/Lists';
 
 export default function Recommand() {
+  document.title = 'Recommand | Music App';
   const params = useParams();
   const nav = useNavigate();
   const location = useLocation();

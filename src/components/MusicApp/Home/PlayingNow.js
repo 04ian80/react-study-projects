@@ -40,6 +40,7 @@ const initArg = {
 };
 
 export default function PlayingNow() {
+  document.title = 'Playlist | Music App';
   const nav = useNavigate();
   const [state, dispatch] = useReducer(reducer, initArg);
 

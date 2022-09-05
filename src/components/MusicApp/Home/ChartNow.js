@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { toggleChart, chartInit } from '../../../store/ChartNowReducer';
 
 export default function ChartNow() {
+  document.title = 'Chart | MusicApp';
   const nav = useNavigate();
   const [state, dispatch] = useReducer(toggleChart, chartInit);
 

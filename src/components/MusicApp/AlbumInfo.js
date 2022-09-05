@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function AlbumInfo() {
+  document.title = 'Album | Music App';
   const { data, error } = useSWR('posts');
   const nav = useNavigate();
 

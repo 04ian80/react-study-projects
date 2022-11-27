@@ -14,11 +14,10 @@ react-router를 활용하여 Single Page Application으로 음악앱의 UI를 �
 | 기술 스택  | 주요 기능 |
 | ------------- | ------------- |
 | React  | react-router / Link / Outlet / useParams / useNavigate / useLocation / Route에 state를 추가하여 **useParam**과 **useLocation**으로 상세페이지 구현 / **axios** 라이브러리로 api 받아오기 / **SWRConfig, useSWR**로 받아온 api 전역에 전달 / **useReducer**로 카테고리에 따라 다른 UI 구현  |
-| styled-components  | -  |
 
 <br />
 
-### 구현사항
+### ⚙️구현사항
 
 - #### ㅇㅇ님을 위한 추천
 
